@@ -2,7 +2,7 @@
 
 ## User stories
 
-As an administrator, I want to save the exams as a template, so that I can use it later.
+As an administrator, I want to save exams as a template, so that I can use them later.
 
 As a administrator, I want to create questions for exams or modules, so we can test potensial students or users.
 
