@@ -1,0 +1,112 @@
+/* Basically boilerplate */
+
+
+/* Applies font to all text */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Hvem faen vet hva som skjer her */
+body {
+    margin: 0;
+}
+
+
+/* -------------------------------------------------------- */
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    height: 60px;
+    font-size: 120%;
+}
+
+#headerLeft {
+    float: left;
+    text-decoration: none !important;
+    color: inherit;
+    margin: auto 0 auto 0;
+    padding-left: 40px;
+}
+
+#headerRight {
+    float: right;
+    text-decoration: none !important;
+    color:inherit;
+    margin: auto 0 auto 0;
+    padding-right: 40px;
+}
+
+
+/* -------------------------------------------------------- */
+
+ /* Content */
+#content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* -------------------------------------------------------- */
+
+ /* Button */
+
+ #todoBtn {
+     background-color: white;
+     font-size: 40px;
+     margin-top: 110px;
+     width: 225px;
+     margin-left:100px;
+ }
+
+ #todoBtn:hover {
+     background-color: #3de39e;
+ }
+
+
+
+
+ /* -------------------------------------------------------- */
+
+
+/* Todo container */ 
+
+.container{
+    display: flex;
+    max-width: 1000px;
+    margin: 100px auto 0;
+    flex-wrap: wrap;
+}
+
+.flex .item {
+    flex-grow: 1;
+}
+
+.item {
+    height: 200px;
+    background-color: #f1f1f1;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.item + .item {
+    margin-left: 10%;
+}
+
+ /* -------------------------------------------------------- */
+ /* Completede todo container */
+
+ h1 {
+    margin-left:100px;
+
+ }
+
+.lmao {
+    width: 150px;
+}
+
+
