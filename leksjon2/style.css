@@ -7,9 +7,10 @@
 }
 
 
-/* Hvem faen vet hva som skjer her */
-body {
+/* Reset margin og font */
+html body {
     margin: 0;
+    padding: 0;
 }
 
 
@@ -24,21 +25,20 @@ header {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     height: 60px;
     font-size: 120%;
+
 }
 
-#headerLeft {
-    float: left;
+header #headerLeft, #headerRight {
     text-decoration: none !important;
     color: inherit;
     margin: auto 0 auto 0;
+}
+
+#headerLeft {
     padding-left: 40px;
 }
 
 #headerRight {
-    float: right;
-    text-decoration: none !important;
-    color:inherit;
-    margin: auto 0 auto 0;
     padding-right: 40px;
 }
 
@@ -60,11 +60,13 @@ header {
      font-size: 40px;
      margin-top: 110px;
      width: 225px;
-     margin-left:100px;
+     margin-bottom: 100px;
+     cursor: pointer;
+     transition: 0.5s;
  }
 
  #todoBtn:hover {
-     background-color: #3de39e;
+     background-color: #56D4C2;
  }
 
 
@@ -76,15 +78,12 @@ header {
 /* Todo container */ 
 
 .container{
-    display: flex;
-    max-width: 1000px;
-    margin: 100px auto 0;
-    flex-wrap: wrap;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 4%;
 }
 
-.flex .item {
-    flex-grow: 1;
-}
 
 .item {
     height: 200px;
@@ -93,20 +92,43 @@ header {
 }
 
 
-.item + .item {
-    margin-left: 10%;
-}
+
 
  /* -------------------------------------------------------- */
- /* Completede todo container */
+ /* Complete todo container */
 
- h1 {
-    margin-left:100px;
 
- }
-
-.lmao {
-    width: 150px;
+.table, .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 1200px;
+    margin: 0 auto;
 }
 
+.toprow {
+    background-color: grey;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow: auto;
+    background-color: rgba(220, 220, 220, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    width: 320px;
+    height: 380px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+}
 
