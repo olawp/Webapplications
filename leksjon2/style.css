@@ -63,6 +63,7 @@ header #headerLeft, #headerRight {
      margin-bottom: 100px;
      cursor: pointer;
      transition: 0.5s;
+     height: 60px;
  }
 
  #todoBtn:hover {
@@ -81,6 +82,7 @@ header #headerLeft, #headerRight {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 75px;
     grid-column-gap: 4%;
 }
 
@@ -89,6 +91,7 @@ header #headerLeft, #headerRight {
     height: 200px;
     background-color: #f1f1f1;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 
@@ -106,7 +109,10 @@ header #headerLeft, #headerRight {
 }
 
 .toprow {
-    background-color: grey;
+    background-color: #E6E6E6;
+    text-align: left;
+    font-size: 20px;
+    padding: 10px 0px 10px 0px;
 }
 
 .modal {
@@ -122,13 +128,60 @@ header #headerLeft, #headerRight {
 
 .modal-content {
     background-color: white;
-    padding: 20px;
-    width: 320px;
-    height: 380px;
+    max-width: 320px;
     position: relative;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 8px;
+    padding: 18px 40px 42px 40px
 }
 
+.toprow div {
+    padding-left: 35px;
+}
+
+.row div{
+    padding-left: 35px;
+    border-bottom: 1px solid ;
+    color: #8B8B8B;
+}
+
+
+.modaltop {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #E6E6E6;
+}
+
+.modalbottom {
+    display: grid;
+    grid-row-gap:5px;
+}
+
+.modalbottom input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: -10px;
+
+}
+
+span {
+    font-size: 30px
+}
+
+span:hover {
+    cursor: pointer;
+}
+
+
+#createBtn {
+    width: 100%;
+    background-color: #56D4C2;
+    height: 35px;
+    color: white;
+    border-width: 0px;
+    padding: 5px 0px 5px 0px;
+    font-size:20px
+}

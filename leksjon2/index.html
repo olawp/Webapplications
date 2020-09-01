@@ -16,10 +16,10 @@
         </header>
         <div id="content">
             <button id="todoBtn"> + Todo</button>
-            <section class="container flex">
+            <section id="todoContainer" class="container flex">
                 <article class="item">Item 1</article>
                 <article class="item">Item 2</article>
-                <article class="item">Item 3</article>                
+                <article class="item">Item 3</article>               
             </section>
             <h2>Completed todos</h2>
         </div>
@@ -32,32 +32,28 @@
                 <div>Completed date</div>
                 
             </div>
-            <div class="table_row">
-                <div class="row">
-                    <div>A</div>
-                    <div>B</div>
-                    <div>C</div>
-                    <div>D</div>
-                </div>
-                <div class="row">
-                    <div>A</div>
-                    <div>B</div>
-                    <div>C</div>
-                    <div>D</div>
-                </div>
+            <div id="test" class="table_row">
                 
             </div>
         </div>
 
         <div id="modal" class="modal">
             <div class="modal-content">
-                <p>Title</p>
-                <input type="text">
-                <p>Description</p>
-                <input type="text">
-                <p>Author</p>
-                <input type="text">
-                <button>Create</button>
+                <div class="modaltop">
+                    <p>New todo</p>
+                    <span id="modalCloseBtn">&times</span>
+                </div>
+                <div class="modalbottom">
+                    <p>Title</p>
+                    <input type="text"id="titleText">
+                    <p>Description</p>
+                    <input type="text" id="descText">
+                    <p>Author</p>
+                    <input type="text" id="authorText">
+                    <br>
+                    <button id="createBtn">Create</button>
+                </div>
+                
             </div>
         </div>
 
