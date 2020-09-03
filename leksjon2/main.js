@@ -15,6 +15,7 @@ var date = today.getDate()+'.'+(today.getMonth()+1)+'.'+today.getFullYear();
 
 var todoArray = [];
 var completedTodoArray = [];
+var sortArray = [];
 
 
  /* ------------------------------------------------------- */
@@ -65,17 +66,25 @@ document.getElementById("createBtn").addEventListener("click", function() {
 
 
 function printTodoData(){
+   
+    var iteration = 3;
     document.getElementById("todoContainer").innerHTML="";
-    for(var i = 0; i < todoArray.length; i++){
+
+    for(var i = todoArray.length - 1;  i >= 0; i--) {
         var data = "<div class='todoElement' value='" + i + "'>" + "<h1>" + todoArray[i].title + "</h1>" + "<p>" + todoArray[i].description + "</p>"
         + "<div class='todoElementBtns'><button onclick='removeElement(this)' class='removeTodoBtn'>Delete</button><button onclick='completeElement(this)' class='completeTodoBtn'>Complete</button></div>"
         + "</div>";
 
-
         document.getElementById("todoContainer").innerHTML += data;
-        
- 
+
+        iteration--;
+        if(iteration === 0){
+            break;
+        }
+
+
     }
+
 
 } 
 
@@ -89,11 +98,15 @@ function printCompletedTodoData() {
         var output = "<div class='table'>" + "<p>" + completedTodoArray[i].title + "</p>" + "<p>" + completedTodoArray[i].description + "</p>"
         + "<p>" + completedTodoArray[i].author + "</p>" + "<p>" + date + "</p>"
         
-        completedTodoDiv.innerHTML += output;
+
+        completedTodoDiv.innerHTML += output
 
     }
 
+
+
 }
+
 
 function removeElement(element){
     var currentElement = element.parentNode.parentNode;
