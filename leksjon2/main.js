@@ -6,6 +6,7 @@ var modal = document.getElementById("modal");
 var title = document.getElementById("titleText");
 var author = document.getElementById("authorText");
 var desc = document.getElementById("descText");
+  
 
 //Get date
 var today = new Date();
@@ -21,6 +22,8 @@ var completedTodoArray = [];
 
 
 /* Listeners */
+
+// Listener for 
 
 //Creates modal for creating new todos
 document.getElementById("todoBtn").addEventListener("click", function(){
@@ -70,6 +73,7 @@ function printTodoData(){
 
 
         document.getElementById("todoContainer").innerHTML += data;
+        
  
     }
 
@@ -127,3 +131,16 @@ function completeElement(element){
         }
     }
 }
+
+           
+function countCharacters(e) {                                    
+    var textEntered, countRemaining, counter;          
+    textEntered = document.getElementById('descText').value;  
+    counter = (125 - (textEntered.length));
+    countRemaining = document.getElementById('charactersRemaining'); 
+    countRemaining.textContent = " (" + counter + " characters left)";       
+  }
+
+
+  var descCounter = document.getElementById('descText');
+  descCounter.addEventListener('keyup', countCharacters, false);

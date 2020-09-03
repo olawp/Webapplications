@@ -6,7 +6,7 @@
         <title>Todo - Leksjon 2</title>
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-        
+
     </head>
     <body>
         <header>
@@ -15,48 +15,43 @@
             <a id="headerRight" href="#">User</a>
         </header>
         <div id="content">
-            <button id="todoBtn"> + Todo</button>
-            <section id="todoContainer" class="container flex">
-
-            </section>
-            <h2>Completed todos</h2>
+            <button id="todoBtn">
+                + Todo</button>
+            <section id="todoContainer" class="container"></section>
+            <div>
+                <h2>Completed todos</h2>
+                <input id="filterCheck"  type="checkbox">
+                <label for="filterCheck" >Filter by date</label>
+            </div>
         </div>
 
         <div id="list_container">
-            <div  class="table toprow">
+            <div class="table toprow">
                 <div>Title</div>
                 <div>Author</div>
                 <div>Description</div>
-                <div>Completed date</div>   
+                <div>Completed date</div>
             </div>
-            <div id="listElements">
-
-            </div>    
-            </div>
+            <div id="listElements"></div>
         </div>
-
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <div class="modaltop">
-                    <p>New todo</p>
-                    <span id="modalCloseBtn">&times</span>
-                </div>
-                <div class="modalbottom">
-                    <p>Title</p>
-                    <input type="text"id="titleText">
-                    <p>Description</p>
-                    <input type="text" id="descText">
-                    <p>Author</p>
-                    <input type="text" id="authorText">
-                    <br>
-                    <button id="createBtn">Create</button>
-                </div>
-                
-            </div>
-        </div>
-
-
-        <script src="main.js"></script>
     </body>
+</html></div><div id="modal" class="modal">
+<div class="modal-content">
+    <div class="modaltop">
+        <p>New todo</p>
+        <span id="modalCloseBtn">&times</span>
+    </div>
+    <div class="modalbottom">
+        <p>Title</p>
+        <input type="text" id="titleText">
+        <p>Description<spantext id="charactersRemaining">
+                (125 characters left)</span>
+        </p>
+        <input type="text" id="descText" maxlength="125">
+        <p>Author</p>
+        <input type="text" id="authorText">
+        <br>
+        <button id="createBtn">Create</button>
+    </div>
 
-</html>
+</div></div><script src="main.js"></script></body></html>
