@@ -1,0 +1,234 @@
+/* Basically boilerplate */
+
+
+/* Applies font to all text */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Reset margin og font */
+html body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* -------------------------------------------------------- */
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    height: 60px;
+    font-size: 120%;
+
+}
+
+header #headerLeft, #headerRight {
+    text-decoration: none !important;
+    color: inherit;
+    margin: auto 0 auto 0;
+}
+
+#headerLeft {
+    padding-left: 40px;
+}
+
+#headerRight {
+    padding-right: 40px;
+}
+
+
+/* -------------------------------------------------------- */
+
+ /* Content */
+#content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* -------------------------------------------------------- */
+
+ /* Button */
+
+ #todoBtn {
+     background-color: white;
+     font-size: 40px;
+     margin-top: 110px;
+     width: 225px;
+     margin-bottom: 100px;
+     cursor: pointer;
+     transition: 0.5s;
+     height: 60px;
+ }
+
+ #todoBtn:hover {
+     background-color: #56D4C2;
+ }
+
+
+
+
+ /* -------------------------------------------------------- */
+
+
+/* Todo container */ 
+
+.container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 75px;
+    grid-column-gap: 4%;
+}
+
+
+.item {
+    height: 200px;
+    background-color: #f1f1f1;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+
+ /* -------------------------------------------------------- */
+ /* Complete todo container */
+
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.toprow {
+    background-color: #E6E6E6;
+    text-align: left;
+    font-size: 20px;
+    padding: 10px 0px 10px 0px;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow: auto;
+    background-color: rgba(220, 220, 220, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    max-width: 320px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    padding: 18px 40px 42px 40px
+}
+
+.toprow div {
+    padding-left: 35px;
+}
+
+.row div{
+    padding-left: 35px;
+    border-bottom: 1px solid ;
+    color: #8B8B8B;
+}
+
+
+.modaltop {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #E6E6E6;
+}
+
+.modalbottom {
+    display: grid;
+    grid-row-gap:5px;
+}
+
+.modalbottom input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: -10px;
+
+}
+
+span {
+    font-size: 30px
+}
+
+span:hover {
+    cursor: pointer;
+}
+
+
+#createBtn {
+    width: 100%;
+    background-color: #56D4C2;
+    height: 35px;
+    color: white;
+    border-width: 0px;
+    padding: 5px 0px 5px 0px;
+    font-size:20px
+}
+
+
+
+.todoElement {
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px #5DD3D829;
+    border-radius: 8px;
+}
+
+.todoElementBtns {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.todoElementBtns button {
+    padding: 4px 20px;
+    border-radius: 4px;
+    border: 0px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 4px;
+    transition: 0.3s;
+}
+
+.removeTodoBtn {
+    background-color: #EF3340;
+}
+
+.removeTodoBtn:hover {
+    background-color: #de212e;
+}
+
+.completeTodoBtn {
+    background-color: #56D4C2;
+}
+
+.completeTodoBtn:hover {
+    background-color: #49b6a8;
+}
+
+
+.table p {
+    padding-left: 35px;
+    border-bottom: 1px solid #E6E6E6;
+}
+
