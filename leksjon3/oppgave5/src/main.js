@@ -70,11 +70,12 @@ function printTodoData(){
     document.getElementById("todoContainer").innerHTML="";
 
     for(var i = todoArray.length - 1;  i >= 0; i--){
-        var data = "<div class='todoElement' value='" + i + "'>" + "<h1>" + todoArray[i].title + "</h1>" + "<p>" + todoArray[i].description + "</p>"
-        + "<div class='todoElementBtns'><button onclick='removeElement(this)' class='removeTodoBtn'>Delete</button><button onclick='completeElement(this)' class='completeTodoBtn'>Complete</button></div>"
-        + "</div>";
+        var data = `<div class='todoElement' value=${i}><h1>${todoArray[i].title}</h1><p>${todoArray[i].description}</p><div class='todoElementBtns'><button class='removeTodoBtn'>Delete</button><button class='completeTodoBtn'>Complete</button></div></div>`;
 
         document.getElementById("todoContainer").innerHTML += data;
+
+        document.querySelector('.removeTodoBtn').addEventListener("click", removeElement);
+        document.querySelector('.completeTodoBtn').addEventListener("click", completeElement);
 
         iteration--;
         if(iteration === 0){
@@ -108,7 +109,10 @@ function printCompletedTodoData() {
 
 
 function removeElement(element){
-    var currentElement = element.parentNode.parentNode;
+    
+    const el  = event.currentTarget;
+
+    var currentElement = el.parentNode.parentNode;
 
     for(var i = 0; i < todoArray.length; i++) {
         if(parseInt(currentElement.getAttribute("value")) === i) {
@@ -122,27 +126,31 @@ function removeElement(element){
 }
 
 
-function completeElement(element){
+function completeElement(event){
+
+    const element  = event.currentTarget;
     var currentElement = element.parentNode.parentNode;
     var currentElementValue = currentElement.getAttribute("value");
 
-
-    for(var i = 0; i < todoArray.length; i++) {
-        if(parseInt(currentElementValue) === i) {
-            completedTodoArray.push ({
+    for(var i = 0; i< todoArray.length; i++){
+        if(parseInt(currentElementValue) === i){
+            completedTodoArray.push({
                 "title": todoArray[i].title,
                 "description": todoArray[i].description,
                 "author": todoArray[i].author
             });
-
-            todoArray.splice(i,1);
-            printTodoData();
-            printCompletedTodoData();
-            currentElement.remove();
-
         }
+        todoArray.splice(i,1);
+        printTodoData();
+        printCompletedTodoData();
+        currentElement.remove();
     }
-}
+
+
+    
+    }
+
+    
 
            
 function countCharacters() {                                    
