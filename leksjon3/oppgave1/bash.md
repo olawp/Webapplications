@@ -26,11 +26,11 @@ osv
 
 ## Endre filen i kommandolinjen
 
-For endring via kommandolinjen kan man f.eks bruke teksteditoren nano ved å bruke kommandoen:
+For endring via kommandolinjen kan man f.eks bruke teksteditoren nano(Tror den fungerer i VS code terminal, gjør hvertfall det hos meg. Hvis ikke er den preinstalled på alle unix systemer) ved å bruke kommandoen:
 
 nano testfil - Åpner filen i kommandolinjen, og lar brukeren endre innholdet.
 
-Ellers kan man bruke metoden nevnt under "Legge til tekst i filen" seksjonen.
+Ellers kan man bruke metoden nevnt i "Legge til tekst i filen" seksjonen.
 
 ## Slette filen
 
@@ -40,4 +40,4 @@ rm testfil - Sletter filen. Tar utgangspunkt i at brukeren faktisk har rettighet
 
 rmdir - sletter en tom folder
 
-rm -r - sletter en tom folder og tilhørende subfolders og filer
+rm -r - sletter en folder og tilhørende subfolders og filer
