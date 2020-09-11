@@ -77,6 +77,16 @@ Når git er installert kan jeg navigere til mappen der jeg vil opprette repoet o
 
 # Merge conflict
 
+   Opprettet først en fil i master.
+   Lager så en fil i ny branch med samme navn men med annet innhold.
+   Når man prøver å merge disse branchene blir det conflict.
+
+   Åpner så filen med mergeconflicten og fjerner det jeg vil ha bort. Etter det kan jeg adde og commite som vanlig.
+
+      git add fil
+      git commit -m "Resolved merge conflict"
+      git push origin master
+
 
 # Link til repo
 
