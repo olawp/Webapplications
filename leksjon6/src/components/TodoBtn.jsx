@@ -1,11 +1,13 @@
 import React from 'react';
 
-export default function TodoBtn({setStatus}) {
+const TodoBtn = ({setState}) => {
     const text = "+ Todo";
 
     return (
-        <section>
-            <button>{text}</button>
-        </section>
-    )
+        <div>
+            <button onClick={() => setState(true)} id="todoBtn">{text}</button>
+        </div>
+    );
 }
+
+export default TodoBtn;
