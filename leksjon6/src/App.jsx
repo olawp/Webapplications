@@ -9,23 +9,23 @@ import CompletedList from "./components/CompletedList";
 
 const App = () => {
   const [modalState, setModalState] = useState(false);
-  const [todoArr, setTodoArr] = useState([]);
-  const [completeArr, setCompleteArr] = useState([]);
+  const [todos, setTodos] = useState([]);
+  const [completed, setCompleted] = useState([]);
 
-  const [data, updateData] = useState({title: "", desc: "", author: ""});
+  const [data, setData] = useState({title: "", desc: "", author: ""});
 
   const addTodo = () => {
-    setTodoArr((item) => [{ id: todoArr.length, ...data }, ...item]);
+    setTodos((item) => [{ id: todos.length, ...data }, ...item]);
   };
 
   const deleteTodo = (id) => {
-    const update = todoArr.filter((todo) => todo.id !== id);
-    setTodoArr(update);
+    const update = todos.filter((todo) => todo.id !== id);
+    setTodos(update);
   };
 
   const completeTodo = (id) => {
-    const addCompletedTodoToList = todoArr.filter((todo) => todo.id === id);
-    setCompleteArr(addCompletedTodoToList.concat(completeArr));
+    const addCompletedTodoToList = todos.filter((todo) => todo.id === id);
+    setCompleted(addCompletedTodoToList.concat(completed));
   };
 
   return (
@@ -34,7 +34,7 @@ const App = () => {
       <TodoBtn modalState={modalState} setModalState={setModalState} />
       {modalState && (
         <Modal
-          updateData={updateData}
+          setData={setData}
           modalState={modalState}
           setModalState={setModalState}
           addTodo={addTodo}
@@ -42,13 +42,13 @@ const App = () => {
       )}
 
       <TodoContainer
-        todoArr={todoArr}
+        todos={todos}
         completeTodo={completeTodo}
         deleteTodo={deleteTodo}
       />
 
       <Title />
-      <CompletedList completeArr={completeArr} />
+      <CompletedList completed={completed} />
     </main>
   );
 };

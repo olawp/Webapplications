@@ -1,28 +1,24 @@
 import React, { useState } from "react";
 
-const Modal = ({ addTodo, modalState, setModalState, updateData }) => {
+const Modal = ({ addTodo, modalState, setModalState, setData }) => {
   const [charCount, setCharCount] = useState(50);
-  const maxChars = 50;
   const icon = "\u00D7";
 
   const charHandler = (e) => {
     changeHandler(e);
-    setCharCount(maxChars - e.target.value.length);
+    setCharCount(50 - e.target.value.length);
   };
 
   const changeHandler = (e) => {
     const { id, value } = e.target;
-    updateData((item) => ({
-      ...item,
-      [id]: value,
-    }));
+    setData((item) => ({ ...item, [id]: value }));
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
     setModalState(!modalState);
     addTodo();
-    updateData({ title: "", desc: "", author: "" });
+    setData({ title: "", desc: "", author: "" });
   };
 
   return (
@@ -30,7 +26,7 @@ const Modal = ({ addTodo, modalState, setModalState, updateData }) => {
       <form name="todoForm" className="modal-content" onSubmit={submitHandler}>
         <div className="modaltop">
           <p>New todo</p>
-          <span className="exit" onClick={() => setmodalState(!modalState)}>
+          <span className="exit" onClick={() => setModalState(!modalState)}>
             {icon}
           </span>
         </div>

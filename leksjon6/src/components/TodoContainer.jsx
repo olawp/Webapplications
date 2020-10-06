@@ -1,15 +1,15 @@
 import React from "react";
 import TodoCard from "./TodoCard";
 
-const TodoContainer = ({ todoArr, completeTodo, deleteTodo }) => {
+const TodoContainer = ({ todos, completeTodo, deleteTodo }) => {
   return (
     <section id="todoContainer" className="container">
-      {todoArr && todoArr.length == 0 ? (
+      {todos && todos.length == 0 ? (
         <p className="jippi">Jippi! Ingen todos i dag</p>
       ) : (
         <TodoCard
           deleteTodo={deleteTodo}
-          todoArr={todoArr}
+          todos={todos}
           completeTodo={completeTodo}
         />
       )}

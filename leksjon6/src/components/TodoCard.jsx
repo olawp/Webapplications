@@ -1,11 +1,11 @@
 import React from "react";
 
-const TodoCard = ({ todoArr, deleteTodo, completeTodo }) => {
+const TodoCard = ({ todos, deleteTodo, completeTodo }) => {
   return (
     <>
-      {todoArr &&
-        todoArr.length > 0 &&
-        todoArr.map((data) => (
+      {todos &&
+        todos.length > 0 &&
+        todos.map((data) => (
           <div className="todoElement" key={data.id}>
             <h1>{data.title}</h1>
             <p>Author: {data.author}</p>

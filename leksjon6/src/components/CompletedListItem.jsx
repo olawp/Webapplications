@@ -1,19 +1,19 @@
 import React from "react";
 
-const CompletedListItem = ({ completeArr }) => {
+const CompletedListItem = ({ completed }) => {
   var today = new Date();
   var date =
     today.getDate() + "." + (today.getMonth() + 1) + "." + today.getFullYear();
 
   return (
     <div className="table">
-      {completeArr.length > 0 &&
-        completeArr.map((item) => (
+      {completed.length > 0 &&
+        completed.map((item) => (
           <>
-            <p>{item.title}</p>
-            <p>{item.author}</p>
-            <p>{item.desc}</p>
-            <p>{date}</p>
+            <p className="border">{item.title}</p>
+            <p className="border">{item.author}</p>
+            <p className="border">{item.desc}</p>
+            <p className="border">{date}</p>
           </>
         ))}
     </div>
