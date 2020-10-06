@@ -7,72 +7,50 @@ import Title from "./components/Title";
 import TodoContainer from "./components/TodoContainer";
 import CompletedList from "./components/CompletedList";
 
-
 const App = () => {
+  const [modalState, setModalState] = useState(false);
+  const [todoArr, setTodoArr] = useState([]);
+  const [completeArr, setCompleteArr] = useState([]);
 
+  const [data, updateData] = useState({title: "", desc: "", author: ""});
 
-    const [state, setState] = useState(false);
-    const [todoArr, setTodoArr] = useState([]);
-    const [completeArr, setCompleteArr] = useState([]);
+  const addTodo = () => {
+    setTodoArr((item) => [{ id: todoArr.length, ...data }, ...item]);
+  };
 
-    const [data, updateData] = useState({
-        title: '',
-        desc: '',
-        author: ''
-    });
+  const deleteTodo = (id) => {
+    const update = todoArr.filter((todo) => todo.id !== id);
+    setTodoArr(update);
+  };
 
+  const completeTodo = (id) => {
+    const addCompletedTodoToList = todoArr.filter((todo) => todo.id === id);
+    setCompleteArr(addCompletedTodoToList.concat(completeArr));
+  };
 
-    const addTodo = () => {
-        setTodoArr((item) => [{id: todoArr.length, ...data}, ...item]);
-    }
-
-
-
-    const deleteTodo = (id) => {
-        const update = todoArr.filter((todo) => todo.id !== id);
-        setTodoArr(update);
-    }
-
-    const completeTodo = (id) => {
-        const addCompletedTodoToList = todoArr.filter((todo) => todo.id === id);
-        setCompleteArr(addCompletedTodoToList.concat(completeArr));
-    }
-
-
-    return(
-        <main>
-        <Navbar/>
-        <TodoBtn state={state} setState={setState}/>
-        {state && (
+  return (
+    <main>
+      <Navbar />
+      <TodoBtn modalState={modalState} setModalState={setModalState} />
+      {modalState && (
         <Modal
-          data={data} 
           updateData={updateData}
-          state={state}
-          setState={setState}
+          modalState={modalState}
+          setModalState={setModalState}
           addTodo={addTodo}
-          />
-        )}
-        
-        <TodoContainer
-            data={data}
-            updateData={updateData}
-            todoArr={todoArr}
-            setTodoArr={setTodoArr}
-            completeTodo={completeTodo}
-            deleteTodo={deleteTodo}
         />
+      )}
 
-        <Title/>
-        <CompletedList
-            completeTodo={completeTodo}
-            completeArr={completeArr}
-            setCompleteArr={setCompleteArr}
-        />
+      <TodoContainer
+        todoArr={todoArr}
+        completeTodo={completeTodo}
+        deleteTodo={deleteTodo}
+      />
 
-        </main>
-    )
-
-
-}
+      <Title />
+      <CompletedList completeArr={completeArr} />
+    </main>
+  );
+};
 
 export default App;

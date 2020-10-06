@@ -1,9 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-
+  font-family: "Roboto", sans-serif;
 }
-
 
 body {
   position: relative;
@@ -19,7 +17,6 @@ nav {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
   margin-bottom: 5rem;
 }
-
 
 .modal {
   position: fixed;
@@ -41,18 +38,18 @@ nav {
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 8px;
-  padding: 18px 40px 42px 40px
+  padding: 18px 40px 42px 40px;
 }
 
 .modaltop {
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid #E6E6E6;
+  border-bottom: 2px solid #e6e6e6;
 }
 
 .modalbottom {
   display: grid;
-  grid-row-gap:5px;
+  grid-row-gap: 5px;
 }
 
 .modalbottom input {
@@ -60,14 +57,13 @@ nav {
   border-radius: 5px;
   border: 1px solid black;
   margin-top: -5px;
-
 }
 
 #todoBtn {
   background-color: white;
   font-size: 40px;
   width: 225px;
-  margin-left: 10%;
+  margin-left: 12%;
   margin-bottom: 100px;
   cursor: pointer;
   transition: 0.5s;
@@ -75,22 +71,21 @@ nav {
 }
 
 #todoBtn:hover {
-  background-color: #56D4C2;
+  background-color: #56d4c2;
 }
 
 #createBtn {
   width: 100%;
-  background-color: #56D4C2;
+  background-color: #56d4c2;
   height: 35px;
   color: white;
   border-width: 0px;
   padding: 5px 0px 5px 0px;
-  font-size:20px
+  font-size: 20px;
 }
 
-
 .exit {
-  font-size: 30px
+  font-size: 30px;
 }
 
 .exit:hover {
@@ -112,7 +107,7 @@ nav {
 }
 
 .removeTodoBtn {
-  background-color: #EF3340;
+  background-color: #ef3340;
 }
 
 .removeTodoBtn:hover {
@@ -120,26 +115,25 @@ nav {
 }
 
 .completeTodoBtn {
-  background-color: #56D4C2;
+  background-color: #56d4c2;
 }
 
 .completeTodoBtn:hover {
   background-color: #49b6a8;
 }
 
-.container{
+.container {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 75px;
   grid-column-gap: 4%;
 }
 
-
 .todoElement {
   padding: 30px;
   background-color: #ffffff;
-  box-shadow: 0px 8px 16px #5DD3D829;
+  box-shadow: 0px 8px 16px #5dd3d829;
   border-radius: 8px;
 }
 
@@ -158,14 +152,13 @@ nav {
   transition: 0.3s;
 }
 
-.container{
+.container {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 75px;
   grid-column-gap: 4%;
 }
-
 
 #todoContainer {
   max-width: 75%;
@@ -175,13 +168,17 @@ nav {
 .table {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .toprow {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   text-align: left;
   font-size: 20px;
   padding: 10px 0px 10px 0px;
+}
+
+.title {
+  padding-left: 11.5%;
 }

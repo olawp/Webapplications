@@ -1,7 +1,7 @@
 import React from "react";
 import CompletedListItem from "./CompletedListItem";
 
-const CompletedList = ({completeArr}) => {
+const CompletedList = ({ completeArr }) => {
   return (
     <div>
       <div className="table toprow">
@@ -11,7 +11,7 @@ const CompletedList = ({completeArr}) => {
         <div>Completed date</div>
       </div>
       <div id="listElements">
-          <CompletedListItem completeArr={completeArr}/>
+        <CompletedListItem completeArr={completeArr} />
       </div>
     </div>
   );
