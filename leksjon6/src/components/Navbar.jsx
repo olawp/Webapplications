@@ -1,13 +1,9 @@
 import React from 'react';
 
-const title = "HIOF";
-const user = "Bruker Brukersen"
-
-
 const Navbar = () => (
     <nav>
-        <h2>{title}</h2>
-        <p>{user}</p>
+        <h2>HIOF</h2>
+        <p>Bruker Brukersen</p>
     </nav>
 );
 

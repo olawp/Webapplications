@@ -4,9 +4,9 @@ import TodoCard from './TodoCard';
 const TodoContainer = ({todoArr, completeTodo, deleteTodo}) => {
     return(
         <section id="todoContainer" className="container">
-            {todoArr && todoArr.length < 1 ? (
+            {todoArr && todoArr.length == 0 ? (
                 <p>Jippi! Ingen todos i dag</p>
-            ): (
+            ) : (
                 <TodoCard deleteTodo={deleteTodo} todoArr={todoArr} completeTodo={completeTodo}/>
             )}
         </section>

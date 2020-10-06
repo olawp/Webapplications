@@ -5,25 +5,28 @@ import TodoBtn from "./components/TodoBtn";
 import Modal from "./components/Modal";
 import Title from "./components/Title";
 import TodoContainer from "./components/TodoContainer";
+import CompletedList from "./components/CompletedList";
 
 
 const App = () => {
 
 
     const [state, setState] = useState(false);
+    const [todoArr, setTodoArr] = useState([]);
+    const [completeArr, setCompleteArr] = useState([]);
+
     const [data, updateData] = useState({
         title: '',
         desc: '',
         author: ''
     });
 
-    const [todoArr, setTodoArr] = useState([]);
-    const [completeArr, setCompleteArr] = useState([]);
-
 
     const addTodo = () => {
-        setTodoArr((prev) => [{id: todoArr.length, ...data}, ...prev]);
+        setTodoArr((item) => [{id: todoArr.length, ...data}, ...item]);
     }
+
+
 
     const deleteTodo = (id) => {
         const update = todoArr.filter((todo) => todo.id !== id);
@@ -49,7 +52,7 @@ const App = () => {
           addTodo={addTodo}
           />
         )}
-
+        
         <TodoContainer
             data={data}
             updateData={updateData}
@@ -60,6 +63,11 @@ const App = () => {
         />
 
         <Title/>
+        <CompletedList
+            completeTodo={completeTodo}
+            completeArr={completeArr}
+            setCompleteArr={setCompleteArr}
+        />
 
         </main>
     )

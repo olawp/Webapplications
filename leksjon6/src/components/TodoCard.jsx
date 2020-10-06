@@ -1,22 +1,21 @@
 import React from 'react';
-import Title from './Title';
-const TodoCard = (todoArr, deleteTodo, completeTodo) => {
+
+
+const TodoCard = ({todoArr, deleteTodo, completeTodo}) => {
  return (
      <>
-
-            <div className="todoElement" >
-                <h1>ayyy</h1>
-                <p>ayyy</p>
+        {todoArr && todoArr.length > 0 && todoArr.map((data) =>(
+            <div className="todoElement" key={data.id} >
+                <h1>{data.title}</h1>
+                <p>{data.desc}</p>
                 <div className="todoElementBtns">
-                    <button className="removeTodoBtn">Delete</button>
-                    <button className="completeTodoBtn" >Complete</button>
+                    <button className="removeTodoBtn" onClick={() => deleteTodo(data.id)}>Delete</button>
+                    <button className="completeTodoBtn" onClick={() => {completeTodo(data.id); deleteTodo(data.id)}}>Complete</button>
                 </div>
             </div>
+        ))}
      </>
  )
 }
 
 export default TodoCard;
-
-
-

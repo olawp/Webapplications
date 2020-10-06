@@ -1,7 +1,6 @@
-import { format } from "prettier";
 import React, { useState } from "react";
 
-const Modal = ({ addTodo, state, setState, data, updateData }) => {
+const Modal = ({ addTodo, state, setState, updateData, data}) => {
   const [charCount, setCharCount] = useState(50);
   const maxChars = 50;
   const icon = "\u00D7";
@@ -13,9 +12,9 @@ const Modal = ({ addTodo, state, setState, data, updateData }) => {
 
   const changeHandler = (e) => {
     const { id, value } = e.target;
-    updateData((prevState) => ({
-      ...prevState,
-      [id]: value,
+    updateData(item => ({
+      ...item,
+      [id]: value
     }));
   };
 
@@ -23,7 +22,9 @@ const Modal = ({ addTodo, state, setState, data, updateData }) => {
     e.preventDefault();
     setState(!state);
     addTodo();
-    updateData({ title: "", desc: "", author: "" });
+    updateData({title: '',
+     desc: '',
+    author: ''});
   };
 
   return (
@@ -34,12 +35,15 @@ const Modal = ({ addTodo, state, setState, data, updateData }) => {
             <span className="exit" onClick={() => setState(!state)}>{icon}</span>
         </div>  
         <div className="modalbottom">
-            <label htmlFor="titleText" id="titleLabel">Title</label>
-            <input type="text" id="titleText" onChange={changeHandler}></input>
+            <label htmlFor="title"  id="titleLabel">Title</label>
+            <input type="text"  id="title" onChange={changeHandler}></input>
+
             <label htmlFor="descText" id="descLabel">Description <span id="chars">{charCount} characters remaining</span></label>
-            <input id="descText" maxLength="50" onChange={charHandler}></input>
+            <input id="desc" maxLength="50" onChange={charHandler}></input>
+            
             <label htmlFor="authorText" id="authorLabel">Author</label>
-            <input type="text" id="authorText" onChange={changeHandler}></input>
+            <input type="text" id="author" onChange={changeHandler}></input>
+
             <button type="submit" id="createBtn" onClick={submitHandler}>Create</button>
         </div>
     </form>
