@@ -1,10 +1,14 @@
 import express from 'express';
 import morgan from 'morgan';
+import cors from 'cors';
 
 import { PORT } from './constants/index.js';
 import 'dotenv/config.js';
+import errorMiddleware from './middleware/errors.js';
 
 import databaseConnection from './config/db.js';
+import poll from './routes/poll.js';
+import user from './routes/user.js';
 
 const app = express();
 
@@ -12,6 +16,18 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 app.use(express.json);
+
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    allowedHeaders: ['Content-Type'],
+  })
+);
+
+app.use(`${process.env.BASEURL}/polls`, poll);
+app.use(`${process.env.BASEURL}/user`, user);
+
+app.use(errorMiddleware);
 
 databaseConnection();
 
