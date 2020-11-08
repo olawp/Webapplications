@@ -1,2 +1,2 @@
-export * as pollController from './pollController.js';
-export * as userController from './userController.js';
+export * as pollController from './poll.js';
+export * as userController from './user.js';

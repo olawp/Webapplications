@@ -25,7 +25,7 @@ app.use(
 );
 
 app.use(`${process.env.BASEURL}/polls`, poll);
-app.use(`${process.env.BASEURL}/user`, user);
+app.use(`${process.env.BASEURL}/users`, user);
 
 app.use(errorMiddleware);
 

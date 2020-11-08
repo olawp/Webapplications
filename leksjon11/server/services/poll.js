@@ -1,7 +1,7 @@
 import Poll from '../models/poll.js';
 
 export const getPollById = async (id) => Poll.findById(id);
-export const listEvents = async () => Poll.find().populate('user', 'email');
+export const listPolls = async () => Poll.find().populate('user', 'email');
 export const createPoll = async (data) => Poll.create(data);
 
 export const updatePoll = async (id, data) =>
