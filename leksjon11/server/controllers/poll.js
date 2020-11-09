@@ -10,7 +10,6 @@ export const get = catchAsyncErrors(async (req, res, next) => {
     );
   }
   res.status(200).json(poll);
-
 });
 
 export const list = catchAsyncErrors(async (req, res, next) => {
