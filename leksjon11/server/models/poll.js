@@ -30,7 +30,7 @@ pollSchema.pre('save', function (next) {
   next();
 });
 
-const Poll  = mongoose.model('Poll', pollSchema);
+const Poll = mongoose.model('Poll', pollSchema);
 
 export default Poll;
 
