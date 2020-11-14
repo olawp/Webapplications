@@ -17,6 +17,14 @@ const userSchema = new Schema(
       minlength: [8, 'Password must contain more than 8 letters'],
       select: false,
     },
+    role: {
+      type: String,
+      enum: {
+        values: ['user', 'admin'],
+        message: 'No role selected, defaulted to user',
+      },
+      default: 'user',
+    },
   },
   { timestamps: true, toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );

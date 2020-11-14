@@ -12,23 +12,30 @@ const pollSchema = new Schema(
       min: ['5', 'Question should contain more than 5 characters.'],
       max: ['100', 'Question should be shorter than 100 characters'],
     },
+    user: {
+      type: String,
+    },
     answers: [
       {
-        answers: String,
-        correct: {
-          type: Boolean,
-          default: false,
+        answer: String,
+        votes: {
+          type: Number,
+          default: 0,
         },
       },
     ],
   },
   { timestamps: true, toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
+/* 
+Wat de fok
 
 pollSchema.pre('save', function (next) {
   this.slug = slugify.apply(this.question, { lower: true });
   next();
 });
+
+*/
 
 const Poll = mongoose.model('Poll', pollSchema);
 

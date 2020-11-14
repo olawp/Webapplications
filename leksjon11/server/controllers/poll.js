@@ -18,8 +18,12 @@ export const list = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const create = catchAsyncErrors(async (req, res, next) => {
-  const poll = await pollService.createPoll(req.body);
-  res.status(201).json(poll);
+  try {
+    const poll = await pollService.createPoll(req.body);
+    res.status(201).json(poll);
+  } catch (error) {
+    res.status(400).json(error.message);
+  }
 });
 
 export const update = catchAsyncErrors(async (req, res, next) => {
