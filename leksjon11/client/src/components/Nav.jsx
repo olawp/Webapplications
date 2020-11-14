@@ -15,7 +15,7 @@ const NavMenu = styled.ul`
   align-items: center;
 `;
 
-const navMenuItem = styled.li`
+const NavMenuItem = styled.li`
   padding: 0 20px;
   &:first-child {
     padding-left: 0;
@@ -27,7 +27,7 @@ const navMenuItem = styled.li`
     font-weight: 700;
     line-height: 3.456;
     padding: 5px 0;
-    text-text-decoration: none;
+    text-decoration: none;
 
     &.active {
       color: #007b5f;
@@ -39,11 +39,26 @@ const navMenuItem = styled.li`
 const Nav = () => (
   <StyledNav>
     <NavMenu>
-      <navMenuItem>
+      <NavMenuItem>
         <NavLink exact to="/" activeClassName="active">
-          Polls
+          Home
         </NavLink>
-      </navMenuItem>
+      </NavMenuItem>
+      <NavMenuItem>
+        <NavLink exact to="/createuser" activeClassName="active">
+          Create user
+        </NavLink>
+      </NavMenuItem>
+      <NavMenuItem>
+        <NavLink exact to="/createpoll">
+          Create poll
+        </NavLink>
+      </NavMenuItem>
+      <NavMenuItem>
+        <NavLink exact to="/results" activeClassName="active">
+          Results
+        </NavLink>
+      </NavMenuItem>
     </NavMenu>
   </StyledNav>
 );
