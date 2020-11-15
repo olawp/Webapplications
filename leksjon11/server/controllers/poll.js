@@ -33,6 +33,13 @@ export const update = catchAsyncErrors(async (req, res, next) => {
       new ErrorHandler(`Can't find event with ${req.params.id}`, 404)
     );
   }
+  poll.answers.map((answer) => {
+    // This part gives an 500 internal error, but the vote goes through anyway
+    if (req.body._id.includes(answer._id.toString())) {
+      answer.votes += 1;
+    }
+  });
+  poll.save();
   poll = await pollService.updatePoll(req.params.id, req.body);
   res.status(200).json(poll);
 });

@@ -14,6 +14,7 @@ const pollSchema = new Schema(
     },
     user: {
       type: String,
+      ref: 'User',
     },
     answers: [
       {
@@ -27,9 +28,7 @@ const pollSchema = new Schema(
   },
   { timestamps: true, toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
-/* 
-Wat de fok
-
+/*
 pollSchema.pre('save', function (next) {
   this.slug = slugify.apply(this.question, { lower: true });
   next();
