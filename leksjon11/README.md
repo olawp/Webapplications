@@ -5,12 +5,13 @@
 * Node og NPM installert
 * En installasjon av MongoDB
 * Mongo må kjøre for at applikasjonen skal ha noe funksjonalitet
+* Client og server må kjøre samtidig. 
 
 
 ## Info
 * Databasen heter hiof, og kjører på port 27017. Dette skal være default for mongo.
-*  BASEURL skal være /api/v1. Webserveren kjører på port 5000. 
-*  Jeg er ganske sikker på at dette skal fungere out ouf the box, det eneste er nok at hiof databasen må opprettes i mongoshellet, Compass eller lignende. Hvis noe av dette ikke skal fungere vil du finne all infoen du burde trenge i .env filene i /client og /server.
+* BASEURL skal være /api/v1. Webserveren kjører på port 5000. 
+* Jeg er ganske sikker på at dette skal fungere out ouf the box, det eneste er nok at hiof databasen må opprettes i mongoshellet, Compass eller lignende. Hvis noe av dette ikke skal fungere vil du finne all infoen du burde trenge i .env filene i /client og /server.
 
 
 ## Instruksjoner
