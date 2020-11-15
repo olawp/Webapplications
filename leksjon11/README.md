@@ -23,7 +23,8 @@ Naviger til server folderen og kjør "npm install". Start serveren med "npm run 
 Naviger til client folder og kjør "npm install". Start klienten med "npm run dev".
 
 
-Nå skal nettsiden være mulig å åpne på localhost:3000. Man kan se alle tilgjengelie polls på hovedsiden, opprette en bruker, opprette en poll og se pollresultater. Selv om man kan lage en bruker og lagre den i databasen, blir ikke polls eller votes knyttet til denne brukere. Man kan derimot skrive inn et brukernavn når man oppretter en poll. 
+Nå skal nettsiden være mulig å åpne på localhost:3000.  
+Man kan se alle tilgjengelige polls på hovedsiden, opprette en bruker, opprette en poll og se pollresultater. Selv om man kan lage en bruker og lagre den i databasen, blir ikke polls eller votes knyttet til denne brukeren. Man kan derimot skrive inn et brukernavn når man oppretter en poll. 
 
 Brukere blir lagt i users collectionen og polls blir lagt i polls collectionen. 
 
