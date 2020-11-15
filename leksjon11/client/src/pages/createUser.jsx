@@ -25,7 +25,7 @@ const CreateUser = () => {
      */
     try {
       await create(data);
-      window.location.href = '/';
+      window.location = '/';
     } catch (error) {
       console.log(error.message);
     }
