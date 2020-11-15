@@ -5,5 +5,5 @@ module.exports = {
 
   testEnvironment: 'jsdom',
 
-  testMatch: ['<rootDir>/test/**/?(*.)+(spec|test).[tj]s?(s)'],
+  testMatch: ['<rootDir>/**/*.spec.jsx'],
 };
