@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { Input, FormControl, Button, FormLabel } from '@chakra-ui/core';
+import {
+  Input,
+  FormControl,
+  Button,
+  FormLabel,
+  Heading,
+} from '@chakra-ui/core';
 import { create } from '../utils/userService.js';
 
 const CreateUser = () => {
@@ -27,6 +33,7 @@ const CreateUser = () => {
 
   return (
     <form onSubmit={submitHandler}>
+      <Heading pb={3}>Sign up</Heading>
       <FormControl isRequired>
         <FormLabel htmlFor="email">E-mail</FormLabel>
         <Input
@@ -34,6 +41,7 @@ const CreateUser = () => {
           id="email"
           placeholder="name@company.com"
           onChange={(e) => setEmail(e.currentTarget.value)}
+          w={300}
         />
       </FormControl>
       <FormControl isRequired>
@@ -45,9 +53,12 @@ const CreateUser = () => {
           placeholder="********"
           minLength="8"
           onChange={(e) => setPassword(e.currentTarget.value)}
+          w={300}
         />
       </FormControl>
-      <Button type="submit">Submit</Button>
+      <Button mt={4} type="submit">
+        Submit
+      </Button>
     </form>
   );
 };
